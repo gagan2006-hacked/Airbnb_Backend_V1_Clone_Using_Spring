@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Airbnb Payment Demo</title>
+
+    <link rel="stylesheet" href="style.css">
+
+    <!-- Razorpay -->
+    <script src="https://checkout.razorpay.com/v1/checkout.js"></script>
+</head>
+
+<body>
+
+    <h1>Airbnb API Testing</h1>
+
+    <!-- Signup -->
+
+    <div class="card">
+        <h2>Signup</h2>
+
+        <input id="signupName" placeholder="Name">
+        <input id="signupEmail" placeholder="Email">
+        <input id="signupPassword" type="password" placeholder="Password">
+
+        <button onclick="signup()">Signup</button>
+    </div>
+
+    <!-- Login -->
+
+    <div class="card">
+        <h2>Login</h2>
+
+        <input id="loginEmail" placeholder="Email">
+        <input id="loginPassword" type="password" placeholder="Password">
+
+        <button onclick="login()">Login</button>
+    </div>
+
+    <!-- Refresh -->
+
+    <div class="card">
+        <h2>Refresh Access Token</h2>
+
+        <button onclick="refreshToken()">Refresh</button>
+    </div>
+
+    <!-- Payment -->
+
+    <div class="card">
+        <h2>Initiate Payment</h2>
+
+        <input id="bookingId" placeholder="Booking ID">
+
+        <button onclick="pay()">Pay</button>
+    </div>
+
+    <!-- Refund -->
+
+    <div class="card">
+        <h2>Refund</h2>
+
+        <input id="refundBookingId" placeholder="Booking ID">
+
+        <button onclick="refund()">Refund</button>
+    </div>
+
+    <pre id="output"></pre>
+
+    <script src="app.js"></script>
+
+</body>
+
+</html>
