@@ -23,15 +23,15 @@ public class HolidaysPricingStrategy implements PricingStrategy {
     @Override
     public BigDecimal calculatePrice(Inventory inventory) {
         BigDecimal savedPrice=savedValue.calculatePrice(inventory);
-        HolidaysDTO holidayDtos=api.get()
-                .uri(holidayApiUrl, LocalDate.now().getYear()-1)
-                .retrieve().body(HolidaysDTO.class);
-
-        if (holidayDtos!=null){
-        boolean isHoliday = Arrays.stream(holidayDtos.getHolidays())
-                .anyMatch(h -> h.getDate().equals(inventory.getDate().toString()));
-        if (isHoliday) return savedPrice.multiply(BigDecimal.valueOf(1.30));
-        }
+//        HolidaysDTO holidayDtos=api.get()
+//                .uri(holidayApiUrl, LocalDate.now().getYear()-1)
+//                .retrieve().body(HolidaysDTO.class);
+//
+//        if (holidayDtos!=null){
+//            boolean isHoliday = Arrays.stream(holidayDtos.getHolidays())
+//                    .anyMatch(h -> h.getDate().equals(inventory.getDate().toString()));
+//            if (isHoliday) return savedPrice.multiply(BigDecimal.valueOf(1.30));
+//        }
         return savedPrice;
 
     }
